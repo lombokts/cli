@@ -7,7 +7,7 @@
         "lts": "dist/index.js"
     },
     "scripts": {
-        "build": "tsc && npm un -g lombokts && npm i -g"
+        "build": "tsc && npm un -g lts && npm i -g"
     },
     "author": "LombokTS",
     "license": "ISC",
