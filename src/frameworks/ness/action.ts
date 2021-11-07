@@ -1,11 +1,11 @@
 import chalk from 'chalk'
-import fs from 'fs'
-import { askQuestion, initDir, rl } from '../helpers/functions'
 import { execSync } from 'child_process'
-import { NessStructure } from '../structures/ness'
+import fs from 'fs'
+import { askQuestion, initDir, rl } from '../../helpers/functions'
+import { NessStructure } from './structure'
 
-const init = (props: InitProps) => {
-    const ness = async () => {
+const actions = (props: InitProps) => {
+    const init = async () => {
         if (!props.appName) {
             const appName: string = await askQuestion('Application  name: ')
             props.appName = appName.replace(' ', '')
@@ -57,8 +57,8 @@ const init = (props: InitProps) => {
         console.log('')
     }
     return {
-        ness
+        init
     }
 }
 
-export default init
+export default actions
