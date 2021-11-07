@@ -5,6 +5,34 @@
 export const NessStructure: TreeItem[] = [
     {
         type: 'directory',
+        name: '.vscode',
+        childs: [
+            {
+                type: 'file',
+                name: 'launch.json',
+                contents: [
+                    `{`,
+                    `    "version": "0.2.0",`,
+                    `    "configurations": [`,
+                    `        {`,
+                    `            "command": "npm run start:local",`,
+                    `            "name": "$L:APP_NAME Debug",`,
+                    `            "request": "launch",`,
+                    `            "type": "node-terminal",`,
+                    `            "env": {`,
+                    `                "NODE_ENV":"testing",`,
+                    `                "API_PORT": "8000",`,
+                    `                "DEBUG":"true",`,
+                    `            }`,
+                    `        }`,
+                    `    ]`,
+                    `}`
+                ]
+            }
+        ]
+    },
+    {
+        type: 'directory',
         name: 'config',
         childs: [
             {
@@ -2155,7 +2183,9 @@ export const NessStructure: TreeItem[] = [
             `    },`,
             `    "scripts": {`,
             `        "start": "cross-env API_PORT=8000 NODE_ENV=development nodemon",`,
-            `        "debug": "cross-env API_PORT=8000 NODE_ENV=development nodemon",`,
+            `        "start:local": "npm-run-all initdb:local debug",`,
+            `        "initdb:local": "PGPASSWORD=$DB_PASS psql -h 127.0.0.1 -U $DB_USER -p 35432 -f sql/initdb.sql $L:APP_NAME",`,
+            `        "debug": "cross-env API_PORT=8000 NODE_ENV=testing nodemon",`,
             `        "lint": "tslint -c tslint.json -p tsconfig.json",`,
             `        "test": "cross-env NODE_ENV=testing jest --testTimeout=30000 --runInBand --forceExit --detectOpenHandles",`,
             `        "tsc": "tsc",`,
@@ -2248,6 +2278,7 @@ export const NessStructure: TreeItem[] = [
             `        "ts-node": "^10.1.0",`,
             `        "tslint": "^6.1.3",`,
             `        "typescript": "^4.3.5"`,
+            `        `,
             `    }`,
             `}`
         ]
