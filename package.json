@@ -1,6 +1,6 @@
 {
     "name": "lombokts-cli",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "a CLI for generating a backend REST API boilerplate using typescript, express, sequelize, swagger, etc.",
     "main": "index.js",
     "bin": {
