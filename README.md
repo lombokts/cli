@@ -1,4 +1,4 @@
-#lombokts-cli
+# lombokts-cli
 a command-line-interface application that manage your project using your loved framework with the power of Typescript, like:
 - NESS (NodeJS + Express + Sequelize + Swagger)
 - React (Comming soon)
