@@ -4,14 +4,18 @@
     "description": "a CLI for generating a backend REST API boilerplate using typescript, express, sequelize, swagger, etc.",
     "main": "index.js",
     "bin": {
-        "lts": "dist/index.js"
+        "lts": "dist/src/index.js"
     },
     "scripts": {
-        "build": "tsc && npm un -g lts && npm i -g"
+        "clean": "rimraf dist && npm un -g",
+        "compile": "tsc",
+        "build": "npm-run-all clean compile && npm i -g"
     },
     "author": "LombokTS",
     "license": "ISC",
     "devDependencies": {
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^3.0.2",
         "tslint": "^6.1.3",
         "typescript": "^4.4.4"
     },

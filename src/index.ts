@@ -1,17 +1,13 @@
 #! /usr/bin/env node
-import chalk from 'chalk'
-import { program } from 'commander'
-import init from './commands/init'
+
+import { Command } from 'commander'
+import NessFramework from './frameworks/ness'
+import packageJson from '../package.json'
+const program = new Command()
 
 program
-    .command('init-ness')
-    .argument('<appName>', 'The application name')
-    .description('Init Node, Express, Sequlize, Swagger backend code')
-    .action((appName: string) => {
-        init({ appName })
-            .ness()
-            .then((r) => {})
-            .catch((e) => console.log(chalk.red(e)))
-    })
+    .version(packageJson.version)
+    .description('a CLI for Typescript project manager')
+    .addCommand(NessFramework)
 
-program.parse()
+program.parse(process.argv)
