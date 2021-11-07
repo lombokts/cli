@@ -1,0 +1,23 @@
+{
+    "name": "lombokts",
+    "version": "1.0.0",
+    "description": "a CLI for generating a backend REST API boilerplate using typescript, express, sequelize, swagger, etc.",
+    "main": "index.js",
+    "bin": {
+        "lombokts": "dist/index.js"
+    },
+    "scripts": {
+        "build": "tsc && npm un -g lombokts && npm i -g"
+    },
+    "author": "LombokTS",
+    "license": "ISC",
+    "devDependencies": {
+        "tslint": "^6.1.3",
+        "typescript": "^4.4.4"
+    },
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "commander": "^8.3.0",
+        "conf": "^10.0.3"
+    }
+}
