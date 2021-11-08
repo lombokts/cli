@@ -6,8 +6,8 @@ import packageJson from '../package.json'
 const program = new Command()
 
 program
-    .version(packageJson.version)
-    .description('a CLI for Typescript project manager')
-    .addCommand(NessFramework)
+  .version(packageJson.version)
+  .description('a CLI for Typescript project manager')
+  .addCommand(NessFramework)
 
 program.parse(process.argv)
