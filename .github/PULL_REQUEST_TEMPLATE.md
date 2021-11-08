@@ -4,12 +4,6 @@ Please include a summary of the change and which issue is fixed. Please also inc
 
 Fixes # (issue)
 
-## Pre-step before creating this PR
-- [ ] Choose at least one reviewer
-- [ ] Assign your self
-- [ ] Set related Project
-- [ ] Add label (optional)
-
 ## Type of change
 
 Please delete options that are not relevant.
@@ -32,6 +26,9 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 
 # Checklist:
 
+- [ ] Choose at least one reviewer
+- [ ] Assign your self
+- [ ] Set related Project
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
