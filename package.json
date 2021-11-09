@@ -9,7 +9,8 @@
     "scripts": {
         "clean": "rimraf dist && npm un -g",
         "compile": "tsc",
-        "build": "npm-run-all clean compile && npm i -g"
+        "lint": "tslint -c tslint.json src/**/*.ts",
+        "build": "npm-run-all lint clean compile && npm i -g"
     },
     "author": "LombokTS",
     "license": "ISC",
